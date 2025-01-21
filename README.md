@@ -78,6 +78,25 @@ You should be able to add new functionality to a class without altering its exis
 Example:
 Use interfaces or inheritance to add new features rather than modifying the original class.
 
+```cpp
+#include <iostream>
+#include <string>
+
+// Base class for payment processing
+class PaymentProcessor {
+public:
+    virtual void processPayment(double amount) = 0; // Pure virtual function
+};
+
+// Credit card payment processor
+class CreditCardPaymentProcessor : public PaymentProcessor {
+public:
+    void processPayment(double amount) override {
+        std::cout << "Processing credit card payment of $" << amount << std::endl;
+    }
+};```
+
+
 ### L - Liskov Substitution Principle (LSP)
 Subtypes must be substitutable for their base types.
 
